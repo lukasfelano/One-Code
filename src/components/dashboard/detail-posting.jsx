@@ -29,7 +29,7 @@ function DetailPost(props) {
       </div>
 
       {data ? (
-        <>
+        <div className='animation-op'>
           <div className='d-flex align-items-center py-3'>
             <div className='ps-3 col-md-2 col-4'>{data.user}</div>
             <div className='col-md-10 col-8'>
@@ -47,7 +47,7 @@ function DetailPost(props) {
               ))}
             </div>
           </div>
-        </>
+        </div>
       ) : (
         <>Loading Detail</>
       )}

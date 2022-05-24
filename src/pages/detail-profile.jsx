@@ -8,8 +8,8 @@ function DetailProfile(props) {
   let navigate = useNavigate();
 
   if (Object.keys(props.logged).length === 0) {
-    alert("You must login first!");
     navigate("/");
+    alert("You must login first!");
   }
 
   let id = props.logged.id;
@@ -44,7 +44,7 @@ function DetailProfile(props) {
               </div>
 
               {data ? (
-                <>
+                <div className='animation-op'>
                   <div className='d-flex align-items-center py-3'>
                     <div className='col-3'>Username</div>
                     <div className='ps-3 col-9'>{data.username}</div>
@@ -64,7 +64,7 @@ function DetailProfile(props) {
                     <div className='col-3'>Phone</div>
                     <div className='ps-3 col-9'>{data.phone}</div>
                   </div>
-                </>
+                </div>
               ) : (
                 <>Loading Detail Profile</>
               )}

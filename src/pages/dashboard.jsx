@@ -42,7 +42,7 @@ function Dashboard(props) {
       <Container>
         <Row>
           {menu === "home" ? (
-            <div>
+            <div className='animation-op'>
               <div className='py-3'>
                 <h3 className='text-center'>Dashboard Post</h3>
               </div>

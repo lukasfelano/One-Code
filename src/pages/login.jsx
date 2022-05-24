@@ -42,7 +42,7 @@ function Login(props) {
       <Container>
         <Row className='justify-content-center'>
           {openLogin ? (
-            <div className='col-md-6 col-12 d-flex justify-content-center'>
+            <div className='col-md-6 col-12 d-flex justify-content-center animation-op'>
               <div>
                 <h2 className='mb-0 pb-3 text-center'>Login Form</h2>
 
