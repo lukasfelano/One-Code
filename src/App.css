@@ -1,10 +1,18 @@
-.App {
-  text-align: center;
+.cursor-pointer{
+  cursor: pointer;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hovered{
+  transition: 0.3s all;
+}
+
+.hovered:hover{
+  color: lightseagreen;
+}
+
+.border-dev{
+  border: 2px solid black;
+  border-radius: 1rem
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -36,3 +44,5 @@
     transform: rotate(360deg);
   }
 }
+
+

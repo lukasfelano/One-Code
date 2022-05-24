@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
+
+import Header from "./components/header";
+
+import Login from "./pages/login";
+import Dashboard from "./pages/dashboard";
+import DetailProfile from "./pages/detail-profile";
+import { useState } from "react";
 
 function App() {
+  let [openLogin, setOpenLogin] = useState(false);
+  let [logged, setLogged] = useState({});
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+          <Header profile={logged} status={openLogin} open={setOpenLogin} logOut={setLogged} />
+          <Routes>
+            <Route path="/" element={<Login status={openLogin} open={setOpenLogin} changeLogged={setLogged} />}></Route>
+            <Route path="/dashboard" element={<Dashboard logged={logged} /> }></Route>
+            <Route path="/profile" element={<DetailProfile logged={logged} /> }></Route>
+          </Routes>
+      </BrowserRouter>
     </div>
   );
 }
