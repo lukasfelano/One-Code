@@ -38,6 +38,16 @@ function PostCard(props) {
               </div>
 
               <div>{item.body}</div>
+              <div className='d-flex align-items-center pt-2'>
+                <div className='pe-3'>Comments {item.totalComment}</div>
+                <button
+                  className='btn btn-info'
+                  onClick={() => {
+                    goToMenu("detail-post", item.id);
+                  }}>
+                  See Detail
+                </button>
+              </div>
             </div>
           </div>
         </div>
